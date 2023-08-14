@@ -1,4 +1,3 @@
-TODO: Atualizar documentação e organizar tudo
 ## Introdução
 Este Notebook tem como intuito demonstrar e documentar o desenvolvimento de um modelo de predição de consumo de energia utilizando redes neurais recorrentes, mais especificamente LSTMs e GRUs.
 
