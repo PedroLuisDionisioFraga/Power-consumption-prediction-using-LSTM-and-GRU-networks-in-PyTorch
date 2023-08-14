@@ -7,6 +7,7 @@
 import random
 from datetime import datetime, timedelta
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Definindo o consumo médio (W/h) e o desvio médio de consumo
 # Consumo de energia: 165 watts (máximo), 0,5 watt (standby)
@@ -82,21 +83,15 @@ df = pd.DataFrame(data)
 # Salvando o DataFrame em um arquivo Excel
 df.to_csv('./data/consumo_televisao.csv', index=False)
 
-# import shutil
-# import os
+# Plotando o gráfico
+plt.figure(figsize=(10, 6))
+plt.plot(df['Datetime'], df['kWh'], label='Consumo de Energia')
+plt.xlabel('Data e Hora')
+plt.ylabel('Consumo (kWh)')
+plt.title('Televisão')
+plt.xticks(rotation=45)
+plt.legend()
+plt.tight_layout()
 
-# # Caminhos dos diretórios
-# originDirectory = "C:/Users/Pedro/Documentos/Projetos IC/Previsão de consumo de energia usando redes LST e GRU no PyTorch/Datasets/Dataset gerado por mim/Data"
-# finalDirectory = "C:/Users/Pedro/Documentos/Projetos IC/Previsão de consumo de energia usando redes LST e GRU no PyTorch/Meus códigos/data/MyDatas"
-
-# # Nome do arquivo
-# fileName = 'consumo_televisao.csv'
-
-# # Caminhos completos
-# originPath = os.path.join(originDirectory, fileName)
-# finalPath = os.path.join(finalDirectory, fileName)
-
-# # Mover o arquivo
-# shutil.copy(originPath, finalPath)
-
-# print(f'Arquivo "{fileName}" movido com sucesso para {finalPath}.')
+# Exibindo o gráfico
+plt.show()

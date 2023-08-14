@@ -1,6 +1,7 @@
 import random
 from datetime import datetime, timedelta
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Definindo o consumo médio (kW/h) e o desvio médio de consumo
 # Referência: Geladeira/Refrigerador Brastemp Frost Free Duplex - 462L BRM55
@@ -49,8 +50,18 @@ while current_date < end_date:
 # Criando um DataFrame com os dados
 df = pd.DataFrame(data)
 
-# Juntando as colunas "Datetime" e "Wh" em uma só
-#df['Datetime, kWh'] = df['Datetime'] + ',' + df['kWh'].astype(str)
+# Plotando o gráfico
+plt.figure(figsize=(10, 6))
+plt.plot(df['Datetime'], df['kWh'], label='Consumo de Energia')
+plt.xlabel('Data e Hora')
+plt.ylabel('Consumo (kWh)')
+plt.title('Refrigerador')
+plt.xticks(rotation=45)
+plt.legend()
+plt.tight_layout()
+
+# Exibindo o gráfico
+plt.show()
 
 # Salvando o DataFrame em um arquivo Excel
 df.to_csv('./data/consumo_geladeira.csv', index=False)
