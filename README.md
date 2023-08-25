@@ -12,4 +12,4 @@ Será feita uma análise exploratória da série temporal utilizando métodos cl
 5) Parte teórica, continua procurando artigos e repositórios.
 6) Ao achar mais datasets em artigos ver como eles funcionam, tipo aquele da praia que tem q ver se as subidas são nas sextas e as regressões na segunda.
 7) Fazer uma média, não com valor unitário de todo o gráfico mas a cada hora, gerando um gráfico discreto de hora em hora.
-8) calcular o mSe entre a predição e o gráfico anterior gerado.
+8) calcular o MSE entre a predição e o gráfico anterior gerado.
